@@ -9,6 +9,7 @@ frontend:
   phases:
     build:
       commands:
+        - cd webapp
         - npm run build
   artifacts:
     baseDirectory: .next
