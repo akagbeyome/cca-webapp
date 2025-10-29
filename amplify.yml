@@ -9,8 +9,13 @@ applications:
   #         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
     frontend:
       phases:
+        preBuild:
+          commands:
+            - cd webapp
+            - npm ci
         build:
           commands:
+            - cd webapp
             - npm run build
       artifacts:
         baseDirectory:  webapp/.next
@@ -21,4 +26,3 @@ applications:
           - webapp/.next/cache/**/*
           - webapp/.npm/**/*
           - webapp/node_modules/**/*
-
