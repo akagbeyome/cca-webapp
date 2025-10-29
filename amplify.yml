@@ -11,11 +11,9 @@ applications:
       phases:
         preBuild:
           commands:
-            - cd webapp
             - npm ci
         build:
           commands:
-            - cd webapp
             - npm run build
       artifacts:
         baseDirectory:  webapp/.next
